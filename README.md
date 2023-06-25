@@ -21,7 +21,7 @@ The `app/_core/pluginify.js` code is all that you need to use inside your projec
 
 # Where are the samples?
 
-`app/_core/bundles/jp-all.js` or `app/scripts/jp-all.min.js` are the files that import everything inside themselves and have been fed to the `app/index.html` file.
+`app/_core/bundles/jp-all.js` or `dist/scripts/jp-all.min.js` are the files that import everything inside themselves and have been fed to the `dist/index.html` file.
 
 `app/_core/blocks/plugin-name/plugin-name.js` is a sample plugin (block) that used the Pluginify to get created! You can get inspirations from it to boost-up your own plugin development workflow.
 
@@ -43,7 +43,6 @@ Then, open your Terminal / Command Prompt and run the following commands.
 **TIP!** If you're not so familiar with command line tools yet, [here is a great start](http://webdesign.tutsplus.com/series/the-command-line-for-web-design--cms-777)!
 
 
-- Install global dependencies: `npm install -g browserify@17.0.0 uglify-js@3.12.1`
 - Change directory to this folder on your machine: `cd my/path/to/project`
 - Run `npm install` to install local dependencies
 
