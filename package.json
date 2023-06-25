@@ -1,0 +1,14 @@
+{
+  "name": "jqueryPluginify",
+  "version": "1.0.0",
+  "author": "Ali Tavakoli",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.3.0"
+  },
+  "scripts": {
+    "js-compile": "browserify -t [ babelify --presets [ es2015 ] ] app/_core/bundles/jp-all.js -o app/scripts/jp-all.min.js",
+    "js-minify": "uglifyjs app/scripts/jp-all.min.js -o app/scripts/jp-all.min.js",
+    "build": "npm run js-compile && npm run js-minify"
+  }
+}

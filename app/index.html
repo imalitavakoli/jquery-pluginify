@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <title>jQuery Pluginify</title>
+    <style>
+      .jp-disabled {
+        opacity: .4;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Here is our sample jQuery plugin. -->
+    <div class="jp-plugin-name" data-jp-disabled-class="jp-disabled">This element is a jQuery plugin!</div>
+
+    <hr>
+
+    <p>With 'jQueryPluginify' easily: Initialize, destroy, call methods, and listen to events.</p>
+
+    <!-- If you like to initialize all the jQuery plugins yourself manually, 
+    then set the below variable to `true`. In this way none of them will be 
+    initialized automatically when the page loads and you're free to load any 
+    one of them whenever that you like according to your own coding logic. Just 
+    note that whenever you initialize a block, it must be after loading all of 
+    the required Javascript files which thatblock requires. -->
+    <script>
+      var initializeJPBlocksManually = false;
+    </script>
+
+    <!-- Load jQuey library itself. -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    
+    <!-- Load our own JavaScript codes (jQuery plugins) as a module.
+    NOTE: Modules only work with the HTTP(s) protocol. So they can ONLY work when you open the .html on a server. -->
+    <!-- <script type="module" src="./_core/bundles/jp-all.js"></script> -->
+
+    <!-- Load our own JavaScript codes (jQuery plugins) in a concatenated and minified version. -->
+    <script src="./scripts/jp-all.min.js"></script>
+
+    <script>
+    jQuery(document).ready(function($) {
+
+      // Listen to the `statusChanged.gppluginname` event of the plugin.
+      $('.jp-plugin-name').on('statusChanged.gppluginname', (e, param) => { console.log(param.status); });
+
+      // Call the `toggleDisability` method of the plugin after 1 second.
+      setTimeout(() => {
+        $('.jp-plugin-name').gppluginname('toggleDisability');
+      }, 1000);
+
+    });
+    </script>
+  </body>
+</html>
