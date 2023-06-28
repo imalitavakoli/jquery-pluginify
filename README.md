@@ -43,7 +43,7 @@ Then, open your Terminal / Command Prompt and run the following commands.
 **TIP!** If you're not so familiar with command line tools yet, [here is a great start](http://webdesign.tutsplus.com/series/the-command-line-for-web-design--cms-777)!
 
 
-- Change directory to this folder on your machine: `cd my/path/to/project`
+- Change directory to this folder on your machine: `cd my/path/to/here`
 - Run `npm install` to install local dependencies
 
 
